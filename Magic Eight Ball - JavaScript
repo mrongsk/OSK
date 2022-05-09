@@ -1,0 +1,51 @@
+let userName = '';
+//Greetings either with username or without.
+userName ? console.log(`Hello, ${userName}!`) : console.log('Hello!');
+
+//Question asked by user.
+const userQuestion = 'Will I be lucky tomorrow?';
+//Printing out the question asked by user.
+userName
+  ? console.log(`${userName} asked, ${userQuestion}`)
+  : console.log(`You asked, ${userQuestion}`);
+
+//Creating variable that is random from 0 to 7.
+let randomNumber = Math.floor(Math.random() * 8);
+
+//Set eightBall to be a number from 0 to 7.
+let eightBall = '';
+eightBall = randomNumber.toString();
+
+//Set up control flow to correspond response to number and reassign eightBall with the response.
+switch (eightBall) {
+  case '0':
+    eightBall = 'It is certain';
+    break;
+  case '1':
+    eightBall = 'It is decidedly so';
+    break;
+  case '2':
+    eightBall = 'Reply hazy try again';
+    break;
+  case '3':
+    eightBall = 'Cannot predict now';
+    break;
+  case '4':
+    eightBall = 'Do not count on it';
+    break;
+  case '5':
+    eightBall = 'My sources say no';
+    break;
+  case '6':
+    eightBall = 'Outlook not so good';
+    break;
+  case '7':
+    eightBall = 'Signs point to yes';
+    break;
+  default:
+    eightBall = 'Invalid number or question';
+    break;
+}
+
+//Print final number and the response.
+console.log(`Number ${randomNumber}, ball response: ${eightBall}`);
