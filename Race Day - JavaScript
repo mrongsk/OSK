@@ -1,0 +1,21 @@
+let raceNumber = Math.floor(Math.random() * 1000);
+let registeredEarly = true; 
+let runnersAge = 18;
+
+//Accounting for racenumbers >= 1000 
+if (registeredEarly && runnersAge > 18) {
+  raceNumber += 1000;
+} 
+
+//Determining race times based on groups
+if (registeredEarly && runnersAge > 18) {
+  console.log(`You will be racing at 9.30am, and your assigned race number will be ${raceNumber}.`); //Early adults
+} else if (!registeredEarly && runnersAge > 18) {
+  console.log(`You will be racing at 11am, and your assigned race number will be ${raceNumber}.`); // Late adults
+} else if (runnersAge < 18) {
+  console.log(`You will be racing at 12.30pm, and your assigned race nuber will be ${raceNumber}.`); //youths under 18
+} else {
+  console.log('Please head to the registration desk.'); //age 18
+}
+
+/*Not a good program. raceNumber has a limit of <2000. If raceNumber overlaps, need to account for it.*/ 
