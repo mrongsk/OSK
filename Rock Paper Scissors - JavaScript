@@ -1,0 +1,58 @@
+//Get the user's choice.
+const userChoice = userInput => {
+  userInput = userInput.toLowerCase();
+  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
+    return userInput;
+  } else {
+    return 'an invalid input, please check your spelling and only give rock, paper or scissors as your choice.';
+  }
+}
+
+//Get the computer's choice. Returns 'rock' or 'paper' or 'scissors'
+function computerChoice() {
+  computerChoose = Math.floor(Math.random()*3); //random number between 0,1,2
+  switch (computerChoose) {
+    case 0:
+      return 'rock';
+    case 1:
+      return 'paper';
+    case 2:
+      return 'scissors';
+  }
+}
+
+//Compare the two choices and determine
+function determiningWinner(userChoice, computerChoice) {
+  if (userChoice === computerChoice) {
+    return 'It\s a draw!';
+  } else if (userChoice === 'rock') {
+    if (computerChoice === 'paper') {
+      return 'You lose!';
+    } else if (computerChoice === 'scissors') {
+      return 'You win!';
+    }
+  } else if (userChoice === 'paper') {
+    if (computerChoice === 'scissors') {
+      return 'You lose!';
+    } else if (computerChoice === 'rock') {
+      return 'You win!';
+    }
+  } else if (userChoice === 'scissors') {
+    if (computerChoice === 'rock') {
+      return 'You lose!';
+    } else if (computerChoice === 'paper') {
+      return 'You win!';
+    }
+  }
+}
+
+//play game for overall game
+const playGame = () => {
+  let getUserChoice = userChoice('Scissors');
+  let getComputerChoice = computerChoice();
+  console.log (`Your choice is ${getUserChoice}.`);
+  console.log (`The computer chose ${getComputerChoice}.`);
+  console.log(determiningWinner(getUserChoice, getComputerChoice));
+}
+
+playGame()
