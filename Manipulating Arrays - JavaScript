@@ -1,0 +1,20 @@
+let secretMessage = ['Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'easily', 'the', 'first', 'time,', 'it', 'is', 'about', 'what', 'you', 'can', 'figure', 'out.', '-2015,', 'Chris', 'Pine,', 'Learn', 'JavaScript'];
+// change to: Programming is not about what you know, it is about what you can figure out. -2015, Chris Pine, Learn to Program
+
+//.pop() remove last element and returns it
+//.push() adds 1 or more element to end of array. returns length of array
+secretMessage.pop();
+secretMessage.push('to', 'Program');
+
+//.shift() remove first element
+secretMessage.shift();
+//.unshift() adds new elements to the start
+secretMessage.unshift('Programming');
+//current array elements are: 'Programming', 'is', 'not', 'about',  'what', 'you', 'get', 'easily', 'the', 'first', 'time,', 'it', 'is',          'about', 'what','you', 'can', 'figure', 'out.', '-2015,', 'Chris', 'Pine,',  'Learn',  'to', 'Program'
+
+//.splice() start at index 6, delete 5 elements, adds in new element
+secretMessage.splice(6, 5, 'know,');
+
+//Check the elements in array. Then join elements with space between them.
+console.log(secretMessage);
+console.log(secretMessage.join(' '));
