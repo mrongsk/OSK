@@ -1,0 +1,20 @@
+let input = 'hello human';
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+let resultArray = [];
+
+//Compare through every element from 'input' and 'vowels'
+//e and u will be dragged to ee and uu
+//Only vowels will be logged
+for ( let i=0; i<input.length; i++ ) {
+  for ( let j=0; j<vowels.length; j++ ) {
+    if (input[i] === vowels[j]) {
+      if (input[i] === 'e' || input[i] === 'u') {
+        resultArray.push(input[i] + input[i]);
+      } else {
+        resultArray.push(input[i]);
+      }
+    }
+  }
+}
+//Logging the letters as a whale word and in caps
+console.log(resultArray.join('').toUpperCase());
